@@ -4,15 +4,15 @@ spring:
     port: 5672
     username: guest
     password: guest
-    #����ACK
+    #开启ACK
     listener:
       direct:
         acknowledge-mode: manual
       simple:
         acknowledge-mode: manual
-    #��������ȷ��
+    # 开启发送确认
     publisher-confirms: true
-    #��������ʧ���˻�
+    #开启发送失败退回
     publisher-returns: true
   application:
     name: rabbitmq-sending
