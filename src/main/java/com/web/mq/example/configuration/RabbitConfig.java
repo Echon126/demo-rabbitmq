@@ -9,9 +9,9 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class RabbitConfig {
-    @Autowired
+/*    @Autowired
     @Qualifier("defaultDirectExchange")
-    private DirectExchange exchange;
+    private DirectExchange exchange;*/
 
 
     @Bean
