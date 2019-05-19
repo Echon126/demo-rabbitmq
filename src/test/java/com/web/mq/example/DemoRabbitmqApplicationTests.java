@@ -1,6 +1,6 @@
 package com.web.mq.example;
 
-import com.web.mq.example.service.Producer;
+import com.web.mq.example.service.send.Producer;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

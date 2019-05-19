@@ -1,4 +1,4 @@
-package com.web.mq.example.service;
+package com.web.mq.example.service.send;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,7 +13,6 @@ import java.util.List;
 @Component
 public class Producer implements RabbitTemplate.ReturnCallback {
     private static Logger logger = LoggerFactory.getLogger(Producer.class);
-    ;
 
 /*    @Autowired
     AmqpTemplate rabbitmqTemplate;*/
