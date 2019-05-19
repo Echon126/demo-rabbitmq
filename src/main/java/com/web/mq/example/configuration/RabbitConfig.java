@@ -12,3 +12,5 @@ public class RabbitConfig {
         return new Queue("okong");
     }
 }
+
+
