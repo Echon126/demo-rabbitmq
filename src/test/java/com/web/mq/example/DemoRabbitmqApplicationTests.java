@@ -1,6 +1,7 @@
 package com.web.mq.example;
 
-import com.web.mq.example.service.Producer;
+import com.web.mq.example.service.receive.fanout.FanoutSender;
+import com.web.mq.example.service.send.Producer;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,14 @@ public class DemoRabbitmqApplicationTests {
         System.out.println("dfdsfsdfsdfdsfdssssssssssssssss");
             producer.send("------------11111111111111111111111111-------------" + new Date());
         //}
+    }
+
+    @Autowired
+    private FanoutSender sender;
+
+    @Test
+    public void fanoutSender() throws Exception {
+        sender.send();
     }
 
 }

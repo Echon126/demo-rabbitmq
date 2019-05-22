@@ -1,4 +1,4 @@
-package com.web.mq.example.service;
+package com.web.mq.example.service.receive;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

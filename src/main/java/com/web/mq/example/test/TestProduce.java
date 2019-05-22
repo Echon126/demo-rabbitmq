@@ -1,6 +1,6 @@
 package com.web.mq.example.test;
 
-import com.web.mq.example.service.Producer;
+import com.web.mq.example.service.send.Producer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
