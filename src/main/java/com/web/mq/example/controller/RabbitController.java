@@ -12,4 +12,8 @@ public class RabbitController {
      * TODO https://blog.csdn.net/zhxdick/article/details/81084672
      */
 
+
+    public static void main(String[] args) {
+
+    }
 }
