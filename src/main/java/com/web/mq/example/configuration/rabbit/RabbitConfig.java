@@ -58,6 +58,7 @@ public class RabbitConfig {
     //TODO https://blog.csdn.net/zj20142213/article/details/81463025
     //TODO https://github.com/401Studio/WeekLearn/issues/2
     //TODO https://blog.csdn.net/dulihanjiang666/article/details/81530538
+    //TODO https://segmentfault.com/a/1190000015369917 实现延迟队列
 }
 
 
