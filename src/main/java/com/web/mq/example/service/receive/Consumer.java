@@ -13,19 +13,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
-@RabbitListener(queues = "okong")
 public class Consumer {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     private static List<String> list = new ArrayList<String>();
 
-    @RabbitHandler
+    @RabbitListener(queues = "okong")
     public void process(String messages, Channel channel, Message message) throws IOException {
-        // throw  new RuntimeException(messages);
         try {
             logger.info("接收的消息为: {}", messages);
             channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);
-
         } catch (Exception e) {
             e.printStackTrace();
             logger.error("------------------receiver fail------------------------------------");

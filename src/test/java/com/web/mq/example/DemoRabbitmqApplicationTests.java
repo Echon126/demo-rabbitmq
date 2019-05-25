@@ -25,12 +25,12 @@ public class DemoRabbitmqApplicationTests {
         //}
     }
 
-    @Autowired
+   /* @Autowired
     private FanoutSender sender;
 
     @Test
     public void fanoutSender() throws Exception {
         sender.send();
-    }
+    }*/
 
 }

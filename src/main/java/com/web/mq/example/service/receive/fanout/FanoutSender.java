@@ -9,8 +9,9 @@ public class FanoutSender {
     @Autowired
     private AmqpTemplate amqpTemplate;
 
-    public void send(){
-        String context = "hi,fanout message";
-        this.amqpTemplate.convertAndSend("fanoutExchange","",context);
+
+    public void send(String message) {
+        String context = "hi,fanout message" + message;
+        this.amqpTemplate.convertAndSend("fanoutExchange", "", context);
     }
 }

@@ -1,19 +1,12 @@
 package com.web.mq.example.configuration.rabbit;
 
 import org.springframework.amqp.core.*;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 
 @Configuration
 public class RabbitConfig {
-/*    @Autowired
-    @Qualifier("defaultDirectExchange")
-    private DirectExchange exchange;*/
-
-
     @Bean
     public Queue okongQueue() {
         return new Queue("okong");
@@ -59,6 +52,7 @@ public class RabbitConfig {
     //TODO https://github.com/401Studio/WeekLearn/issues/2
     //TODO https://blog.csdn.net/dulihanjiang666/article/details/81530538
     //TODO https://segmentfault.com/a/1190000015369917 实现延迟队列
+
 }
 
 

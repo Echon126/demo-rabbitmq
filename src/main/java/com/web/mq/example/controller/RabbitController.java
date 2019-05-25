@@ -13,7 +13,5 @@ public class RabbitController {
      */
 
 
-    public static void main(String[] args) {
 
-    }
 }
