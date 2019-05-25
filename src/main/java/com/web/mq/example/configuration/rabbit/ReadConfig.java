@@ -46,6 +46,26 @@ public class ReadConfig {
      *  延时队列中的消息会在指定的时间延迟之后被消费
      *
      */
+
+    /**
+     * Exception
+     *  org.springframework.amqp.rabbit.listener.exception.ListenerExecutionFailedException: Listener method 'no match' threw exception
+     *  解决方式
+     *      1.将@RabbitListener(queues=”test_mq_testQueue”)不需要放在类上。直接注释在方法上就好
+     *       https://blog.csdn.net/olinner123/article/details/77477323
+     *       https://www.cnblogs.com/lazio10000/p/5559999.html
+     *       https://blog.csdn.net/liu941807382/article/details/86719159
+     *
+     * Caused by: org.springframework.amqp.AmqpException: No method found for class java.lang.String
+     *              https://blog.csdn.net/u013358378/article/details/86495962
+     *              消费者服务Service配置的队列名 如果重复，那么相同队列名的每个服务都会尝试去将当前的正在消费的消息转换成自己的入参对象
+     *              （相当于一个生产者，多个消费者），结果很显然，消息转换入参对象不一样就报错啰，抛出的结果如上。
+     *
+     *              这里需要注意的是，同一Service里的消费方法是可以根据消息内容识别入参对象，也就是说队列名配置在类上是没有问题的(如下)，
+     *              但同一队列名配置在多个类上就会有上述的问题，并且对上错误的类是将类里每个消费方法都尝试消息转换入参对象的，
+     *              消费方法多的情况下会给人一种重复刷新的错觉。
+     *
+     */
 }
 
 

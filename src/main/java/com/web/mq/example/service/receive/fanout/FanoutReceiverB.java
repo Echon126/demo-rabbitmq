@@ -7,10 +7,10 @@ import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
 @Component
-
+@RabbitListener(queues = "fanout.B")
 public class FanoutReceiverB {
     private static final Logger logger = LoggerFactory.getLogger(FanoutReceiverB.class);
-    @RabbitListener(queues = "fanout.B")
+    @RabbitHandler
     public void process(String message) {
         logger.info("-----------fanout Receiver B :---------------" + message);
 

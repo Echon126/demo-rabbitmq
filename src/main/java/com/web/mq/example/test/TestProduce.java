@@ -21,11 +21,11 @@ public class TestProduce implements ApplicationListener<ContextRefreshedEvent> {
     @Override
     public void onApplicationEvent(ContextRefreshedEvent applicationEvent) {
 
-       /* for (int i = 0; i < 10; i++) {
-            producer.send("------------11111111111111111111111111-------------" + new Date());
-        }*/
+        for (int i = 0; i < 100; i++) {
+            //producer.send("------------11111111111111111111111111-------------" + new Date());
+        }
 
-        for(int i=0;i<20;i++){
+        for(int i=0;i<2000;i++){
             sendService.send("------------11111111111111111111111111-------------" + new Date());
         }
     }
