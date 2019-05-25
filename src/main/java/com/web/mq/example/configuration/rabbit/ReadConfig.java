@@ -1,4 +1,4 @@
-package com.web.mq.example.configuration;
+package com.web.mq.example.configuration.rabbit;
 
 public class ReadConfig {
     /**

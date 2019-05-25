@@ -1,4 +1,4 @@
-package com.web.mq.example.configuration;
+package com.web.mq.example.configuration.rabbit;
 
 import org.springframework.amqp.core.*;
 import org.springframework.beans.factory.annotation.Autowired;
