@@ -14,5 +14,6 @@ public class FanoutReceiverA {
     @RabbitHandler
     public void process(String message) {
         logger.info("-----------fanout receiver A :---------------" + message);
+
     }
 }

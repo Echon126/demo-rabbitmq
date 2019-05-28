@@ -14,9 +14,7 @@ import java.util.List;
 public class Producer implements RabbitTemplate.ReturnCallback {
     private static Logger logger = LoggerFactory.getLogger(Producer.class);
 
-/*    @Autowired
-    AmqpTemplate rabbitmqTemplate;*/
-private static List<String> list = new ArrayList<String>();
+    private static List<String> list = new ArrayList<String>();
 
     @Autowired
     private RabbitTemplate rabbitTemplate;
@@ -24,7 +22,7 @@ private static List<String> list = new ArrayList<String>();
     public void send(String message) {
         this.rabbitTemplate.setReturnCallback(this);
         this.rabbitTemplate.setConfirmCallback(((correlationData, ack, cause) -> {
-            System.out.println("-------------ack---------------"+ack);
+            System.out.println("-------------ack---------------" + ack);
             if (!ack) {
                 logger.info("Producer消息发送失败" + cause + correlationData);
             } else {

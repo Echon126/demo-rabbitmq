@@ -14,9 +14,8 @@ spring:
     publisher-confirms: true
     #开启发送失败退回
     publisher-returns: true
-
   application:
     name: rabbitmq-sending
-  thymeleaf:
-    prefix: classpath:/templates/
-    cache: false
+
+server:
+  port: 8089
