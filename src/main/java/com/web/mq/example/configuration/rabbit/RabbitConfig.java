@@ -1,5 +1,9 @@
 package com.web.mq.example.configuration.rabbit;
 
+import org.springframework.amqp.core.Binding;
+import org.springframework.amqp.core.BindingBuilder;
+import org.springframework.amqp.core.FanoutExchange;
+import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.core.*;
 import org.springframework.amqp.rabbit.config.SimpleRabbitListenerContainerFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
@@ -56,6 +60,8 @@ public class RabbitConfig {
     //TODO https://github.com/401Studio/WeekLearn/issues/2
     //TODO https://blog.csdn.net/dulihanjiang666/article/details/81530538
     //TODO https://segmentfault.com/a/1190000015369917 实现延迟队列
+
+
 
 
     /*@Bean
