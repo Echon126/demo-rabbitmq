@@ -1,8 +1,5 @@
 package com.web.mq.example.test;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.web.mq.example.entity.User;
 import com.web.mq.example.service.receive.fanout.FanoutSender;
 import com.web.mq.example.service.send.Producer;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,13 +24,15 @@ public class TestProduce implements ApplicationListener<ContextRefreshedEvent> {
     @Override
     public void onApplicationEvent(ContextRefreshedEvent applicationEvent) {
 
-        for (int i = 0; i < 100; i++) {
-            //producer.send("------------11111111111111111111111111-------------" + new Date());
+        for (int i = 0; i < 10; i++) {
+            producer.send("------------11111111111111111111111111-------------" + sdf.format(new Date()));
         }
 
         for (int i = 0; i < 2000; i++) {
+/*
+        for(int i=0;i<2000;i++){
             sendService.send("------------11111111111111111111111111-------------" + new Date());
-        }
+        }*/
     }
 
     public static void main(String[] args) throws IOException {

@@ -66,6 +66,18 @@ public class ReadConfig {
      *              消费方法多的情况下会给人一种重复刷新的错觉。
      *
      */
+
+    /**
+     * TODO 消息手动确认模式的说明
+     *  监听的方法内部必须使用channel进行消息确认，包括消费成功或者失败
+     *  如果不手动确认，也不抛出异常，消费不会自动重新推送，因为对于rabbitmq来说始终没有接受到消息消费是否成功的确认，
+     *  并且channel实在消费端有缓存的，没有断开连接
+     *
+     *
+     * TODO https://my.oschina.net/dengfuwei/blog/1595047
+     *
+     * TODO https://my.oschina.net/dengfuwei/blog/1595044 spring-boot-rabbitmq动态管理
+     */
 }
 
 

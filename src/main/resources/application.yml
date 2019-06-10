@@ -5,15 +5,22 @@ spring:
     username: guest
     password: guest
     #开启ACK
-    listener:
-      direct:
-        acknowledge-mode: manual
-      simple:
-        acknowledge-mode: manual
-    # 开启发送确认
-    publisher-confirms: true
-    #开启发送失败退回
-    publisher-returns: true
+#    listener:
+#      direct:
+#        acknowledge-mode: manual
+#        retry:
+#          enabled: true
+#          max-attempts: 3
+#          initial-interval: 5000ms
+#        default-requeue-rejected: true
+#
+#      simple:
+#        acknowledge-mode: manual
+#    # 开启发送确认
+#    publisher-confirms: true
+#    #开启发送失败退回
+#    publisher-returns: true
+
 
   application:
     name: rabbitmq-sending
