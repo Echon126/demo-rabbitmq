@@ -7,10 +7,8 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Map;
 
 @Component
 public class TestProduce implements ApplicationListener<ContextRefreshedEvent> {
@@ -33,18 +31,28 @@ public class TestProduce implements ApplicationListener<ContextRefreshedEvent> {
         for(int i=0;i<2000;i++){
             sendService.send("------------11111111111111111111111111-------------" + new Date());
         }*/
-    }
+        }
 
-    public static void main(String[] args) throws IOException {
+   /* public static void main(String[] args) throws IOException {
         User uesr = new User();
         uesr.setAge(10);
         //uesr.setUserName("aaaa");
         ObjectMapper objectMapper = new ObjectMapper();
-        String json = objectMapper.writeValueAsString(uesr);
-        Map map = objectMapper.readValue(json, Map.class);
-        System.out.println(json);
+            String json = null;
+            try {
+                json = objectMapper.writeValueAsString(uesr);
+            } catch (JsonProcessingException e) {
+                e.printStackTrace();
+            }
+            Map map = null;
+            try {
+                map = objectMapper.readValue(json, Map.class);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            System.out.println(json);
         System.out.println(map);
 
+    }*/
     }
-
 }
